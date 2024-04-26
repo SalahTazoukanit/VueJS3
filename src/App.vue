@@ -1,19 +1,32 @@
 <template>
-  <HelloSalah @update-name="(name) => display(name)" />
+  <!-- <HelloSalah @update-name="(name) => display(name)" /> -->
   <!-- <span> {{ sentence }} </span> -->
 
   <!-- <div>
     <input type="text" name="" id="" v-model="name" />
     <input type="text" name="" id="" v-model="age" />
   </div> -->
+
+  <p><router-link to="/about"><a href="">about</a></router-link></p>  
+  <p><router-link to="/"><a href="">home</a></router-link></p>
+
+  <RouterView />
+  
 </template>
 
 <script setup>
 import HelloSalah from './components/HelloSalah.vue'
 
-const display = (name) => {
-  console.log('App.vue :' + name)
-}
+// import Home from './components/views/Home.vue';
+// import about from './components/views/about.vue';
+
+
+
+
+
+// const display = (name) => {
+//   console.log('App.vue :' + name)
+// }
 // import { watch, ref } from 'vue'
 
 // const sentence = computed(() => {
@@ -34,10 +47,10 @@ const display = (name) => {
 </script>
 
 <style scoped>
-.text-red {
+/* .text-red {
   color: indianred;
 }
 .text-green {
   color: green;
-}
+} */
 </style>
