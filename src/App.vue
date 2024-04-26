@@ -1,47 +1,43 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <HelloSalah @update-name="(name) => display(name)" />
+  <!-- <span> {{ sentence }} </span> -->
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <!-- <div>
+    <input type="text" name="" id="" v-model="name" />
+    <input type="text" name="" id="" v-model="age" />
+  </div> -->
 </template>
 
+<script setup>
+import HelloSalah from './components/HelloSalah.vue'
+
+const display = (name) => {
+  console.log('App.vue :' + name)
+}
+// import { watch, ref } from 'vue'
+
+// const sentence = computed(() => {
+//   return `Bonjour je m'appelle ${name.value} et j'ai ${age.value} ans`
+// })
+
+// const name = ref('Salaheddine')
+// const age = ref(27)
+
+// watch(name, (newValue, oldValue) => {
+//   console.log(newValue, oldValue)
+// })
+
+// function display() {
+//   console.log(name, age)
+// }
+// display()
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
+.text-red {
+  color: indianred;
 }
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.text-green {
+  color: green;
 }
 </style>
